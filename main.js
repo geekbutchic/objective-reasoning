@@ -1,27 +1,34 @@
 // ┌─────────────────┐
 // │ Your code here! │
 // └─────────────────┘
-function isAdmin (str) {
-  for (let i = 0; i < str.length; i++) {
-    if (str[i].userRole === "ADMIN") {
-      return true;
+isAdmin = (user) => {
+    if (user.userRole === "ADMIN") {
+        return true;
     } else {
-      return false;
+        return false;
     }
-  }
-  return str.userRole
+}
+// => return codeimmersives email 
+getEmail = (object) => {
+    console.log(object.firstName);
+    console.log(object.lastName);
+    return object.firstName.toLowerCase() + "." + object.lastName.toLowerCase() + "@codeimmersives.com"
 }
 
-getEmail = (str) => {
-
+getPlaylistLength = (playlistObject) => {
+    return playlistObject.songs.length;
 }
 
-getPlaylistLength = (str) => {
+getHardestHomework = (homeworks) => {
+    console.log(homeworks);
 
-}
+    for (const item of homeworks) {
+        console.log(item);
+        console.log(item.name);
+        console.log(item.averageScore);
+    }
 
-getHardestHomework = (str) => {
-
+    
 }
 
 createPhonebook = (str) => {
