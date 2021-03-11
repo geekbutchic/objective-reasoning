@@ -21,34 +21,47 @@ getPlaylistLength = (playlistObject) => {
 
 getHardestHomework = (homeworks) => {
     console.log(homeworks);
-    let smallest = 100;
-    let output = '';
+    let lowestAverageScore = Infinity;
+    let nameOfHardest = '';
 
     for (const item of homeworks) {
         // console.log(item);
         // console.log(item.name);
         // console.log(item.averageScore);
-        if (item.averageScore < smallest) {
-            output = item.name;
-            smallest = item.averageScore
+        if (item.averageScore < lowestAverageScore) {
+            nameOfHardest = item.name;
+            lowestAverageScore = item.averageScore
         }
     }
-    return output;
+    return nameOfHardest;
 }
 
-function getHardestHomework (grade) {
-    let hardestName = "";
-    let highestPos = 100;
-    for (const score of grade) {
-        if (score.averageScore < highestPos) {
-            highestPos = score.averageScore;
-            hardestName = score.name;
+// function getHardestHomework (grade) {
+//     let hardestName = "";
+//     let highestPos = 100;
+//     for (const score of grade) {
+//         if (score.averageScore < highestPos) {
+//             highestPos = score.averageScore;
+//             hardestName = score.name;
+//         }
+//     }
+//     return hardestName;
+// }
+
+function getHardestHomework (arr) {
+    let homework = ''
+    let num = []
+        for (const work of arr){
+            num.push(work.averageScore)
+        } 
+        const i = num.indexOf(Math.min.apply(null,num))
+        if (arr[i]!==undefined){
+        homework = arr[i].name
+        } else {
+            homework = ''
         }
-    }
-    return hardestName;
+    return homework
 }
-
-
 
 
 
