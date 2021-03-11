@@ -59,6 +59,15 @@ createPhonebook = (names, numbers) => {
     return phonebook;
 }
 
+function createPhonebook(name, number) {
+    //defines variable to an empty object that will store solution
+    let final = {};
+    //loops through both name and number arrays with forEach method and inserts name as keys and number as values
+    name.forEach((name, i) => final[name] = number[i])
+    //returns object
+    return final;
+}
+
 // ┌─────────────────────────────────────┐
 // │ Do not modify code below this line. │
 // └─────────────────────────────────────┘
