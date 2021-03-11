@@ -36,6 +36,22 @@ getHardestHomework = (homeworks) => {
     return output;
 }
 
+function getHardestHomework (grade) {
+    let hardestName = "";
+    let highestPos = 100;
+    for (const score of grade) {
+        if (score.averageScore < highestPos) {
+            highestPos = score.averageScore;
+            hardestName = score.name;
+        }
+    }
+    return hardestName;
+}
+
+
+
+
+
 createPhonebook = (str) => {
 
 }
