@@ -54,7 +54,9 @@ createPhonebook = (names, numbers) => {
     const phonebook = {};
 
     for (let i = 0; i < names.length; i++) {
-        phonebook[names[i]] = numbers[i];
+        const name = names[i];
+        const number = numbers[i];
+        phonebook[name] = number;
     }
     return phonebook;
 }
@@ -63,7 +65,8 @@ function createPhonebook(name, number) {
     //defines variable to an empty object that will store solution
     let final = {};
     //loops through both name and number arrays with forEach method and inserts name as keys and number as values
-    name.forEach((name, i) => final[name] = number[i])
+    name.forEach(
+        (name, i) => final[name] = number[i])
     //returns object
     return final;
 }
