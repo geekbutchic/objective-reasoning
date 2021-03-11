@@ -21,14 +21,19 @@ getPlaylistLength = (playlistObject) => {
 
 getHardestHomework = (homeworks) => {
     console.log(homeworks);
+    let smallest = 100;
+    let output = '';
 
     for (const item of homeworks) {
-        console.log(item);
-        console.log(item.name);
-        console.log(item.averageScore);
+        // console.log(item);
+        // console.log(item.name);
+        // console.log(item.averageScore);
+        if (item.averageScore < smallest) {
+            output = item.name;
+            smallest = item.averageScore
+        }
     }
-
-    
+    return output;
 }
 
 createPhonebook = (str) => {
