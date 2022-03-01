@@ -1,75 +1,40 @@
 // ┌─────────────────┐
 // │ Your code here! │
 // └─────────────────┘
-isAdmin = (user) => {
-    if (user.userRole === "ADMIN") {
-        return true;
-    } else {
-        return false;
+const isAdmin = (user) => {
+  return user.userRole === "ADMIN" ? true : false;
+};
+
+const getEmail = (user) => {
+  return `${user.firstName.toLowerCase()}.${user.lastName.toLowerCase()}@codeimmersives.com`;
+};
+
+const getPlaylistLength = (playList) => {
+  return playList.songs.length;
+};
+
+const getHardestHomework = (average) => {
+  let hardest = "";
+  let highest = Infinity;
+  for (const score of average) {
+    if (score.averageScore < highest) {
+      highest = score.averageScore;
+      hardest = score.name;
     }
-}
-// => return codeimmersives email 
-getEmail = (object) => {
-    console.log(object.firstName);
-    console.log(object.lastName);
-    return object.firstName.toLowerCase() + "." + object.lastName.toLowerCase() + "@codeimmersives.com"
-}
+  }
+  return hardest;
+};
 
-getPlaylistLength = (playlistObject) => {
-    return playlistObject.songs.length;
-}
+const createPhonebook = (names, numbers) => {
+  const phonebook = {};
 
-getHardestHomework = (homeworks) => {
-    console.log(homeworks);
-    let lowestAverageScore = Infinity;
-    let nameOfHardest = '';
-
-    for (const item of homeworks) {
-        // console.log(item);
-        // console.log(item.name);
-        // console.log(item.averageScore);
-        if (item.averageScore < lowestAverageScore) {
-            nameOfHardest = item.name;
-            lowestAverageScore = item.averageScore
-        }
-    }
-    return nameOfHardest;
-}
-
-function getHardestHomework (grade) {
-    let hardestName = "";
-    let highestPos = 100;
-    for (const score of grade) {
-        if (score.averageScore < highestPos) {
-            highestPos = score.averageScore;
-            hardestName = score.name;
-        }
-    }
-    return hardestName;
-}
-
-createPhonebook = (names, numbers) => {
-    console.log(names);
-    console.log(numbers);
-    const phonebook = {};
-
-    for (let i = 0; i < names.length; i++) {
-        const name = names[i];
-        const number = numbers[i];
-        phonebook[name] = number;
-    }
-    return phonebook;
-}
-
-function createPhonebook(name, number) {
-    //defines variable to an empty object that will store solution
-    let final = {};
-    //loops through both name and number arrays with forEach method and inserts name as keys and number as values
-    name.forEach(
-        (name, i) => final[name] = number[i])
-    //returns object
-    return final;
-}
+  for (let i = 0; i < names.length; i++) {
+    const name = names[i];
+    const number = numbers[i];
+    phonebook[name] = number;
+  }
+  return phonebook;
+};
 
 // ┌─────────────────────────────────────┐
 // │ Do not modify code below this line. │
