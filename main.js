@@ -29,11 +29,11 @@ const createPhonebook = (names, numbers) => {
   const phonebook = {};
 
   for (let i = 0; i < names.length; i++) {
-    const name = names[i];
-    const number = numbers[i];
-    phonebook[name] = number;
+    // const name = names[i];
+    // const number = numbers[i];
+    phonebook[names[i]] = numbers[i];
   }
-  return phonebook;
+  return phonebook; 
 };
 
 // ┌─────────────────────────────────────┐
